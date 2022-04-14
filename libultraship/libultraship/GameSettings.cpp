@@ -61,6 +61,9 @@ namespace Game {
         Settings.enhancements.minimal_ui = stob(Conf[EnhancementSection]["minimal_ui"]);
         CVar_SetS32("gMinimalUI", Settings.enhancements.minimal_ui);
 
+        Settings.enhancements.newdrops = stob(Conf[EnhancementSection]["newdrops"]);
+        CVar_SetS32("gNewDrops", Settings.enhancements.newdrops);
+        
         // Audio
         Settings.audio.master = Ship::stof(Conf[AudioSection]["master"]);
         CVar_SetFloat("gGameMasterVolume", Settings.audio.master);
@@ -152,6 +155,7 @@ namespace Game {
         Conf[EnhancementSection]["disable_lod"] = std::to_string(Settings.enhancements.disable_lod);
         Conf[EnhancementSection]["animated_pause_menu"] = std::to_string(Settings.enhancements.animated_pause_menu);
         Conf[EnhancementSection]["minimal_ui"] = std::to_string(Settings.enhancements.minimal_ui);
+		Conf[EnhancementSection]["newdrops"] = std::to_string(Settings.enhancements.newdrops);
 
         // Controllers
         Conf[ControllerSection]["gyro_sensitivity"] = std::to_string(Settings.controller.gyro_sensitivity);
